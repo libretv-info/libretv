@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Música - LibreTv.info</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // 🔍 Buscador en vivo
+    function filtrarCanales() {
+      const input = document.getElementById('buscador').value.toLowerCase();
+      const cards = document.querySelectorAll('.canal-card');
+      cards.forEach(card => {
+        const texto = card.innerText.toLowerCase();
+        card.style.display = texto.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+  <style>
+    /* 🔧 Ajuste global de imágenes a 200px */
+    .canal-card img {
+      height: 200px;
+      width: auto;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+<header class="text-center py-6 bg-blue-800 text-white shadow">
+  <h1 class="text-3xl font-bold">🎵 Canales Musicales - LibreTv.info
+    <!-- Buscador -->
+  </h1>
+  </header>
+
+<main class="max-w-7xl mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+  <!-- T-Series -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/unnamedt series.jpg" alt="T-Series" width="900" height="900">    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">T-Series</h2>
+      <p class="text-sm text-gray-700 mt-1">Música de Bollywood y canciones populares de la India.</p>
+      <a href="https://www.youtube.com/user/tseries" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- Zee Music Company -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/Zee_Music_Company.svg.png" alt="Zee Music Company" width="2560" height="894">    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">Zee Music Company</h2>
+      <p class="text-sm text-gray-700 mt-1">Canciones y videoclips de Bollywood y artistas indios.</p>
+      <a href="https://www.youtube.com/user/zeemusiccompany" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- BLACKPINK -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/blackpink.png" alt="BLACKPINK">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">BLACKPINK</h2>
+      <p class="text-sm text-gray-700 mt-1">Grupo de K-pop con vídeos musicales y contenido exclusivo.</p>
+      <a href="https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- BANGTANTV -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/BTS.png" alt="BANGTANTV">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">BANGTANTV</h2>
+      <p class="text-sm text-gray-700 mt-1">Canal oficial de BTS: clips, detrás de escenas y más.</p>
+      <a href="https://www.youtube.com/user/BANGTANTV" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- Hybe Labels -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/hype.jpeg" alt="Hybe Labels">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">Hybe Labels</h2>
+      <p class="text-sm text-gray-700 mt-1">Sello de K-pop con artistas globales y contenido exclusivo.</p>
+      <a href="https://www.youtube.com/c/ibighit" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- Justin Bieber -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/326-3264257_justin-bieber-logo-name.png" alt="Justin Bieber">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">Justin Bieber</h2>
+      <p class="text-sm text-gray-700 mt-1">Artista pop internacional con millones de suscriptores.</p>
+      <a href="https://www.youtube.com/user/justinbieberVEVO" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- KondZilla -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/konzila.jpg" alt="KondZilla">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">KondZilla</h2>
+      <p class="text-sm text-gray-700 mt-1">Funk brasileño y música urbana con videos oficiales.</p>
+      <a href="https://www.youtube.com/user/kondzilla" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- El Reino Infantil -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/El_Reino_Infantil_logo.jpg" alt="El Reino Infantil">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">El Reino Infantil</h2>
+      <p class="text-sm text-gray-700 mt-1">Canciones y contenidos musicales para niños.</p>
+      <a href="https://www.youtube.com/user/ElReinoInfantil" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- Tips Official -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/tips-official-logo-7sdx1r9ib64p2uv9.jpg" alt="Tips Official">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">Tips Official</h2>
+      <p class="text-sm text-gray-700 mt-1">Canciones y videoclips de música india moderna.</p>
+      <a href="https://www.youtube.com/user/tipsofficial" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- Sony Music India -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/sony.png" alt="Sony Music India">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">Sony Music India</h2>
+      <p class="text-sm text-gray-700 mt-1">Grandes producciones musicales de India y artistas populares.</p>
+      <a href="https://www.youtube.com/user/SonyMusicIndia" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- Wave Music -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/wave.png" alt="Wave Music">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">Wave Music</h2>
+      <p class="text-sm text-gray-700 mt-1">Música regional y popular de India con videoclips modernos.</p>
+      <a href="https://www.youtube.com/user/WaveMusic" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+  <!-- EminemMusic -->
+  <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transform transition overflow-hidden">
+    <div class="bg-gray-200 flex items-center justify-center h-52">
+      <img src="logos/music/eminem.jpg" alt="EminemMusic">
+    </div>
+    <div class="p-3">
+      <h2 class="font-semibold text-lg">EminemMusic</h2>
+      <p class="text-sm text-gray-700 mt-1">Canal oficial de Eminem con videoclips y lanzamientos de rap.</p>
+      <a href="https://www.youtube.com/user/EminemMusic" target="_blank"
+         class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-center py-6 text-gray-600 bg-gray-50 mt-10 border-t"></footer>
+
+</body>
+</html>

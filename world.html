@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Canales Internacionales - LibreTv.info</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .logo-img { max-height: 6rem; max-width: 100%; }
+  </style>
+  <script>
+    function filtrarCanales() {
+      const q = document.getElementById('buscador').value.toLowerCase();
+      document.querySelectorAll('.canal-card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<header class="text-center py-6 bg-blue-800 text-white shadow">
+  <h1 class="text-3xl font-bold">📺 Canales Internacionales - LibreTv.info</h1>
+</header>
+
+<main class="max-w-7xl mx-auto p-4 space-y-8">
+
+  <!-- 🌍 EUROPA -->
+  <section>
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">🇪🇺 Europa</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Reino Unido -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.bbc.co.uk/bbcone" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/BBC.png" alt="BBC One" width="250" height="184" border="0" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">BBC One (Reino Unido)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal público generalista muy influyente con noticias, entretenimiento y cultura.</p>
+          <a href="https://www.bbc.co.uk/bbcone" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Francia -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.tf1.fr/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/TF1.png" alt="TF1" width="2560" height="1382" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">TF1 (Francia)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal líder francés de entretenimiento, series y noticias.</p>
+          <a href="https://www.tf1.fr/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Alemania -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.zdf.de/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/ZDF.png" alt="ZDF" width="2560" height="1527" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">ZDF (Alemania)</h2>
+          <p class="text-sm text-gray-700 mt-1">Servicio público alemán: noticias, cultura y entretenimiento.</p>
+          <a href="https://www.zdf.de/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- España -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.rtve.es/television/la-1/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/la 1.png" alt="La 1" width="1148" height="1025" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">La 1 (España)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal público español con noticias, cultura y entretenimiento general.</p>
+          <a href="https://www.rtve.es/television/la-1/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🌏 ASIA -->
+  <section>
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">🌏 Asia</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Japón -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.nhk.or.jp/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/nhk.png" alt="NHK" width="2048" height="2048" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">NHK General TV (Japón)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal principal japonés: noticias, cultura, entretenimiento y educación.</p>
+          <a href="https://www.nhk.or.jp/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- India -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.dangaltv.com/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/dangal.png" alt="Dangal TV" width="348" height="348" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">Dangal TV (India)</h2>
+          <p class="text-sm text-gray-700 mt-1">Entretenimiento familiar y series en hindi.</p>
+          <a href="https://www.dangaltv.com/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Corea del Sur -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.kbs.co.kr/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/KBS.png" alt="KBS1" width="2560" height="951" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">KBS1 (Corea del Sur)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal público coreano: noticias, cultura y documentales.</p>
+          <a href="https://www.kbs.co.kr/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Indonesia -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.rctiplus.com/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/RCTI.png" alt="RCTI" width="774" height="217" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">RCTI (Indonesia)</h2>
+          <p class="text-sm text-gray-700 mt-1">Entretenimiento, concursos y telenovelas locales.</p>
+          <a href="https://www.rctiplus.com/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🌎 AMÉRICA -->
+  <section>
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">🌎 América</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Brasil -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://globoplay.globo.com/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/globo.png" alt="Globo" width="600" height="600" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">Globo (Brasil)</h2>
+          <p class="text-sm text-gray-700 mt-1">Telenovelas, noticias y entretenimiento general.</p>
+          <a href="https://globoplay.globo.com/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- México -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.lasestrellas.tv/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/Las_Estrellas.png" alt="Las Estrellas" width="2181" height="2049" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">Las Estrellas (México)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal icónico mexicano con novelas, noticias y entretenimiento.</p>
+          <a href="https://www.lasestrellas.tv/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Canadá -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.cbc.ca/television" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/cbc.png" alt="CBC" width="600" height="150" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">CBC Television (Canadá)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal público canadiense con fuerte presencia en noticias y cultura.</p>
+          <a href="https://www.cbc.ca/television" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Argentina -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.eltrecetv.com.ar/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/eltrece.png" alt="El Trece" width="820" height="376" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">El Trece (Argentina)</h2>
+          <p class="text-sm text-gray-700 mt-1">Entretenimiento, programas de variedades y noticias locales.</p>
+          <a href="https://www.eltrecetv.com.ar/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Chile -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.tvn.cl/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/Chile.png" alt="TVN" width="2584" height="1528" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">TVN (Chile)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal estatal chileno con programación cultural y noticieros.</p>
+          <a href="https://www.tvn.cl/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Colombia -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.canalrcn.com/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/Colombia.png" alt="RCN" width="2185" height="2048" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">RCN Televisión (Colombia)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal privado colombiano con novelas y noticias nacionales.</p>
+          <a href="https://www.canalrcn.com/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+      <!-- Perú -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.americatv.com.pe/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/América.png" alt="América TV" width="750" height="176" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">América Televisión (Perú)</h2>
+          <p class="text-sm text-gray-700 mt-1">Canal líder peruano de entretenimiento y noticias locales.</p>
+          <a href="https://www.americatv.com.pe/" target="_blank" class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Ver canal</a>
+        </div>
+      </div>
+
+    </div>
+
+
+  <!-- 🌍 ÁFRICA Y MEDIO ORIENTE -->
+  <section>
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">🌍 África y Medio Oriente</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Sudáfrica -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+         <!-- Sudáfrica -->
+      <div class="canal-card bg-white rounded-xl shadow hover:scale-105 transition">
+        <a href="https://www.sabc1.co.za/" target="_blank" class="bg-gray-200 flex items-center justify-center h-40 p-4 rounded-t-xl">
+          <img src="logos/world/cbc.png" alt="SABC 1" width="600" height="150" class="logo-img">        </a>
+        <div class="p-3">
+          <h2 class="font-semibold text-lg">SABC 1 (Sudáfrica)</h2>
+          <p class="text-sm text-gray-700 mt-1">
+            Canal público sudafricano con enfoque en cultura local, entretenimiento, música y noticias.
+          </p>
+          <a href="https://www.sabc1.co.za/" target="_blank"
+             class="inline-block mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+             Ver canal
+          </a>
+        </div>
+</div>

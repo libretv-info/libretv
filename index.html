@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LibreTv.info - Todo el AudioVisual en un solo lugar</title>
+
+<!-- Manifest y color del tema -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a4dbf">
+
+<!-- 🔹 FAVICONES Y APP ICONS -->
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512x512.png">
+<link rel="apple-touch-icon" href="icons/icon-192x192.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  /* Contador estilo reloj */
+  .counter-display {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .digit {
+    background-color: #ffffff;
+    color: #007bff;
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 8px 10px;
+    box-shadow: inset 0 0 6px #007bff, 0 0 8px #007bff;
+    min-width: 28px;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  .digit.flash { animation: glowPulse 0.4s ease; }
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 8px #00bfff, inset 0 0 10px #007bff; transform: scale(1.1); }
+    100% { box-shadow: inset 0 0 6px #007bff, 0 0 8px #007bff; transform: scale(1); }
+  }
+  @keyframes starPulse {
+    0%,100% { transform: scale(1); filter: drop-shadow(0 0 0px gold); }
+    50% { transform: scale(1.2); filter: drop-shadow(0 0 6px gold); }
+  }
+  .fav-btn { animation: starPulse 2s infinite ease-in-out; }
+
+  /* Estilo del logo */
+  .logo-box {
+    width: 377px;
+    height: 95px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+</style>
+
+<script>
+// Registrar Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(()=>console.log("✅ PWA activo"))
+    .catch(err=>console.error("SW error:", err));
+}
+</script>
+</head>
+
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+
+<!-- HEADER -->
+<header class="bg-blue-700 text-white shadow-md">
+  <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center p-4 gap-4">
+
+    <!-- Logo -->
+    <div class="flex flex-col lg:flex-row items-center gap-4">
+      <div class="logo-box">
+        <a href="index.html">
+          <img src="logo-libre-nuevo.gif" alt="LibreTv Logo">
+        </a>
+      </div>
+    </div>
+
+    <!-- Menú -->
+    <nav class="flex flex-wrap justify-center gap-2">
+      <button onClick="abrirPagina('films.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Films</button>
+      <button onClick="abrirPagina('docus.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Docus</button>
+      <button onClick="abrirPagina('noticias.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Noticias</button>
+      <button onClick="abrirPagina('sports.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Sports</button>
+      <button onClick="abrirPagina('music.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Music</button>
+      <button onClick="abrirPagina('humor.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Humor</button>
+      <button onClick="abrirPagina('infantil.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Infantil</button>
+      <button onClick="abrirPagina('world.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">World</button>
+      <button onClick="abrirPagina('videochat.html')" class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">Videochat</button>
+      <button disabled class="px-4 py-2 bg-gray-500 rounded-lg opacity-60 cursor-not-allowed">Adultos</button>
+      <button id="favBtn" onClick="agregarFavorito()"
+        class="fav-btn px-4 py-2 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-300 transition flex items-center justify-center">
+        ⭐<span class="ml-1 hidden lg:inline">Favorito</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="flex-grow container mx-auto p-4 text-center text-gray-800">
+  <iframe id="viewer"
+          src="https://www.youtube.com/embed/ncvk6KdvBNc?autoplay=1&mute=1"
+          class="w-full aspect-video rounded-lg shadow-lg"
+          allow="autoplay; encrypted-media"
+          allowfullscreen></iframe>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-blue-700 text-white text-center py-6 mt-auto">
+  <p class="text-sm">© 2025 LibreTv.info - Todos los derechos reservados.</p>
+  <div class="counter-display" id="contador"></div>
+  <p class="text-xs text-gray-200 mt-2">Contador global de visitas</p>
+</footer>
+
+<!-- Sonidos -->
+<audio id="introSound" src="" preload="auto"></audio>
+<audio id="beepSound" src="" preload="auto"></audio>
+
+<script>
+function abrirPagina(url){
+  document.getElementById("viewer").src = url;
+  window.scrollTo({top:0,behavior:'smooth'});
+  incrementarContador();
+}
+function volverInicio(){
+  document.getElementById("viewer").src = "https://www.youtube.com/embed/ncvk6KdvBNc?autoplay=1&mute=1";
+  window.scrollTo({top:0,behavior:'smooth'});
+  incrementarContador();
+}
+function agregarFavorito(){
+  const url=window.location.href, titulo=document.title, favBtn=document.getElementById("favBtn");
+  try{
+    if(window.external && ("AddFavorite" in window.external)) window.external.AddFavorite(url,titulo);
+    else if(window.sidebar && window.sidebar.addPanel) window.sidebar.addPanel(titulo,url,"");
+    else alert("Presiona "+(navigator.userAgent.toLowerCase().includes('mac')?"Cmd + D":"Ctrl + D")+" para agregar esta página a tus favoritos ⭐");
+    favBtn.disabled=true;
+    favBtn.classList.remove("hover:bg-yellow-300","fav-btn");
+    favBtn.classList.add("opacity-60","cursor-not-allowed");
+    favBtn.innerHTML="⭐ Agregado";
+    localStorage.setItem("favoritoAgregado","yes");
+  }catch(e){
+    alert("Presiona "+(navigator.userAgent.toLowerCase().includes('mac')?"Cmd + D":"Ctrl + D")+" para agregar esta página a tus favoritos ⭐");
+  }
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+  const favBtn=document.getElementById("favBtn");
+  if(localStorage.getItem("favoritoAgregado")==="yes"){
+    favBtn.disabled=true;
+    favBtn.classList.remove("hover:bg-yellow-300","fav-btn");
+    favBtn.classList.add("opacity-60","cursor-not-allowed");
+    favBtn.innerHTML="⭐ Agregado";
+  }
+  incrementarContador();
+});
+
+let visitas=parseInt(localStorage.getItem("contadorGlobal")||"0");
+function incrementarContador(){
+  visitas++;
+  localStorage.setItem("contadorGlobal",visitas);
+  renderContador(visitas);
+  const beep=document.getElementById("beepSound");
+  beep.currentTime=0;
+  beep.play().catch(()=>{});
+}
+function renderContador(num){
+  const cont=document.getElementById("contador");
+  cont.innerHTML='';
+  num.toString().padStart(6,'0').split('').forEach(d=>{
+    const span=document.createElement('span');
+    span.className='digit';
+    span.textContent=d;
+    cont.appendChild(span);
+  });
+}
+</script>
+
+</body>
+</html>
